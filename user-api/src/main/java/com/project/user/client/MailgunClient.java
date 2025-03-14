@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 
+// RestTemplate, WebClient 를 대신하여 인터페이스로 Rest API 처리
 @FeignClient(name = "mailgun",url = "https://api.mailgun.net/v3/")
 @Qualifier("mailgun")
 public interface MailgunClient {
