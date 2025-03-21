@@ -2,7 +2,7 @@ package com.project.user.config.filter;
 
 import com.project.domain.config.JwtAuthenticationProvider;
 import com.project.domain.domain.common.UserVo;
-import com.project.user.service.customer.CustomerService;
+import com.project.user.service.seller.SellerService;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,12 +10,12 @@ import lombok.RequiredArgsConstructor;
 
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/customer/*") //ServletContainer 기반 -> @ServletComponentScan 필요
+@WebFilter(urlPatterns = "/seller/*") //ServletContainer 기반 -> @ServletComponentScan 필요
 @RequiredArgsConstructor
-public class CustomerFilter implements Filter {
+public class SellerFilter implements Filter {
 
     private final JwtAuthenticationProvider jwtAuthenticationProvider;
-    private final CustomerService customerService;
+    private final SellerService sellerService;
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class CustomerFilter implements Filter {
             throw new ServletException("Invalid Access");
         }
         UserVo vo = jwtAuthenticationProvider.getUserVo(token);
-        customerService.findByIdAndEmail(vo.getId(), vo.getEmail())
+        sellerService.findByIdAndEmail(vo.getId(), vo.getEmail())
                 .orElseThrow(() -> new ServletException("Invalid Access"));
         chain.doFilter(request,response);
     }

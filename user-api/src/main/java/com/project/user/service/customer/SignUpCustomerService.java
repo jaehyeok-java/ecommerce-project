@@ -1,4 +1,4 @@
-package com.project.user.service;
+package com.project.user.service.customer;
 
 import com.project.user.domain.SignUpForm;
 import com.project.user.domain.model.Customer;
