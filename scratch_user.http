@@ -1,0 +1,49 @@
+### 회원가입 ( 고객 )
+POST http://localhost:8080/signup/customer
+Content-Type: application/json
+
+{
+  "email": "jaehyeok.ethan@gmail.com",
+  "password": "pw",
+  "name": "김재혁",
+  "birth": "1999-04-30",
+  "phone": "01000000000"
+}
+
+### 이메일 인증 ( 고객 )
+GET http://localhost:8080/signup/customer/verify?email=jaehyeok.ethan@gmail.com&code=Vy0EpbLw8g
+Content-Type: application/json
+
+
+
+### 로그인 ( 고객 )
+POST http://localhost:8080/signin/customer
+Content-Type: application/json
+
+{
+  "email": "jaehyeok.ethan@gmail.com",
+  "password": "pw"
+}
+
+### 회원 정보 조회 (고객)
+GET http://localhost:8080/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWVoeWVvay5ldGhhbkBnbWFpbC5jb20iLCJpZCI6MSwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTc0MjY0ODY5MywiZXhwIjoxNzQyNzM1MDkzfQ.yRH7DltFM1TbsJZI_vea9TOeJt0hPpZexrJkc3G2bKY
+
+### 잔액 변경 ( 고객 )
+POST http://localhost:8080/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWVoeWVvay5ldGhhbkBnbWFpbC5jb20iLCJpZCI6MSwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTc0MjY0ODY5MywiZXhwIjoxNzQyNzM1MDkzfQ.yRH7DltFM1TbsJZI_vea9TOeJt0hPpZexrJkc3G2bKY
+
+{
+  "from": "server",
+  "message": "돈충전",
+  "money": 50000
+}
+
+#########################
+
+### 회원가입 ( 셀러 )
+
+### 로그인 ( 셀러 )
+

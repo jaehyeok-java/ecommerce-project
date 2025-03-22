@@ -1,3 +1,4 @@
+/*
 package com.project.user.exception;
 
 import lombok.AllArgsConstructor;
@@ -29,4 +30,5 @@ public class ExceptionController {
     }
 }
 
+*/
 
