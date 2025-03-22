@@ -6,8 +6,9 @@ import com.project.user.domain.customer.ChangeBalanceForm;
 import com.project.user.domain.customer.CustomerDto;
 import com.project.user.domain.model.Customer;
 import com.project.user.exception.CustomException;
-import com.project.user.service.CustomerService;
+
 import com.project.user.service.CustomerBalanceService;
+import com.project.user.service.customer.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
